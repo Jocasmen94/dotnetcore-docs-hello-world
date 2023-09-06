@@ -49,6 +49,9 @@ jobs:
 
       - name: Azure Login
         uses: actions/azure/login@v2
+        with:
+           tenant: ${{ secrets.AZURE_TENANT_ID }}
+           client_id: ${{ secrets.AZURE_CLIENT_ID }}      
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
