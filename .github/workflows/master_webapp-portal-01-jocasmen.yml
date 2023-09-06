@@ -48,14 +48,14 @@ jobs:
           name: .net-app
 
       - name: Azure Login
-        uses: actions/azure/login@v2
+        uses: actions/azure/login@v1
         with:
            tenant: ${{ secrets.AZURE_TENANT_ID }}
            client_id: ${{ secrets.AZURE_CLIENT_ID }}      
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v1
         with:
           app-name: 'webapp-portal-01-jocasmen'
           slot-name: 'Production'
